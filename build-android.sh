@@ -267,8 +267,8 @@ case "$NDK_RN" in
 		TOOLSET=gcc-androidR8e
 		;;
 	"10c (64-bit)"|"10d (64-bit)")
-		TOOLCHAIN=${TOOLCHAIN:-arm-linux-androideabi-4.8}
-		CXXPATH=$AndroidNDKRoot/toolchains/${TOOLCHAIN}/prebuilt/${PlatformOS}-x86_64/bin/arm-linux-androideabi-g++
+		TOOLCHAIN=${TOOLCHAIN:-x86-4.8}
+		CXXPATH=$AndroidNDKRoot/toolchains/${TOOLCHAIN}/prebuilt/${PlatformOS}-x86_64/bin/i686-linux-android-g++
 		TOOLSET=gcc-androidR10d
 		;;
 	*)
@@ -429,8 +429,8 @@ echo "Building boost for android"
          link=static                  \
          threading=multi              \
          --layout=versioned           \
-         -sICONV_PATH=`pwd`/../libiconv-libicu-android/armeabi \
-         -sICU_PATH=`pwd`/../libiconv-libicu-android/armeabi \
+         -sICONV_PATH=`pwd`/../libiconv-libicu-android/x86 \
+         -sICU_PATH=`pwd`/../libiconv-libicu-android/x86 \
          --prefix="./../$BUILD_DIR/"  \
          $LIBRARIES                   \
          install 2>&1                 \
